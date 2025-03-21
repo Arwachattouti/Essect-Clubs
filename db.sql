@@ -7,7 +7,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 15 mars 2025 à 20:09
+-- Généré le : ven. 21 mars 2025 à 06:53
 -- Version du serveur : 11.4.4-MariaDB-log
 -- Version de PHP : 8.4.1
 
@@ -52,12 +52,12 @@ CREATE TABLE `adhesions` (
 --
 
 INSERT INTO `adhesions` (`id`, `user_id`, `club_id`, `full_name`, `birthdate`, `email`, `phone`, `gender`, `skills`, `hobbies`, `reason`, `statut`, `cv_pdf_path`) VALUES
-(20, 21, 1, 'Maha Noureddine', '1111-11-11', 'maha@gmail.com', '00000002', 'Femme', '2', 'jo', '25', 'en attente', '1741999268_digital.docx'),
-(25, 36, 3, 'rayen souli', '1222-12-12', 'rayen@gmail.com', '12121212', 'Homme', 'a', 'a', 'a', 'en attente', '1742056858_cv1 - Copy.pdf'),
-(27, 37, 1, 'fedi hamdi', '1111-11-11', 'fedi@gmail.com', '15151515', 'Homme', 'a', 'aa', 'a', 'en attente', '1742057079_resumer javafx.docx'),
-(29, 56, 1, 'arwa chattouti', '1111-11-11', 'arwa@gmail.com', '95415251', 'Femme', 'jj', 'dd', 'ree', 'en attente', '1742068637_rapport ppp.docx'),
-(30, 56, 1, 'bennaceur eya ', '4152-02-15', 'eya@gmail.com', '15241525', 'Femme', 'az', 'rf', 'fr', 'en attente', '1742069151_phpppp.docx'),
-(31, 56, 1, 'wassim jha', '2525-12-05', 'wassim@gmail.com', '00000000', 'Homme', 'h', 'g', 'tr', 'en attente', '1742069229_rapport ppp.docx');
+(25, 36, 3, 'rayen souli', '1222-12-12', 'rayen@gmail.com', '12121212', 'Homme', 'a', 'a', 'a', 'accepté', '1742056858_cv1 - Copy.pdf'),
+(38, 55, 1, 'arwa chattouti', '1111-11-11', 'arwa@gmail.com', '95415251', 'Femme', 'gfjgj', 'gj', 'ygjj', 'accepté', '1742507054_cv1.pdf'),
+(49, 54, 1, 'chef oucema', '5122-02-14', 'oucema@gmail.com', '11412512', 'Homme', 'g', 'g', 'hh', 'refusé', '1742511549_1742511358_1742507122_cv1 - Copy.pdf'),
+(52, 57, 1, 'mohamed', '1111-11-11', 'mohamed@gmail.com', '01020145', 'Homme', 'dedee', 'fv', 'f', 'en attente', '1742521956_cv1 - Copy (3).pdf'),
+(53, 57, 2, 'mohamed', '1111-11-11', 'mohamed@gmail.com', '01020145', 'Homme', 'dcd', 'dc', 'dcd', 'en attente', '1742522056_cv1 - Copy copy.pdf'),
+(54, 61, 2, 'amin', '4522-02-15', 'amin@gmail.com', '15959595', 'Homme', 'gfb', 'dfdf', 'rg', 'en attente', '1742524369_digital.docx');
 
 --
 -- Déclencheurs `adhesions`
@@ -97,9 +97,9 @@ CREATE TABLE `clubs` (
 --
 
 INSERT INTO `clubs` (`id`, `nom`, `logo`, `description`, `date_creation`, `facebook_link`, `instagram_link`, `nb_membre`, `nb_partenaires`, `img_slide1`, `img_slide2`) VALUES
-(1, 'InfoLab', 'infolab.jpg', 'Club InfoLab ESSECT est  une organisation à but non lucratif à l\'ESSECT. Il regroupe des étudiants passionnés de technologie, design, communication et organisation d’événements pour les aider à développer leurs compétences et enrichir leur parcours. Il propose des formations, ateliers et événements pour favoriser la collaboration et l’innovation  .', '2022-09-25', 'https://www.facebook.com/profile.php?id=100086193647142', 'https://www.instagram.com/infolab_essect/', 4, 0, '1.png', '2.png'),
+(1, 'InfoLab', 'infolab.jpg', 'Club InfoLab ESSECT est  une organisation à but non lucratif à l\'ESSECT. Il regroupe des étudiants passionnés de technologie, design, communication et organisation d’événements pour les aider à développer leurs compétences et enrichir leur parcours. Il propose des formations, ateliers et événements pour favoriser la collaboration et l’innovation  .', '2022-09-25', 'https://www.facebook.com/profile.php?id=100086193647142', 'https://www.instagram.com/infolab_essect/', 5, 0, '1.png', '2.png'),
 (2, 'Radio', 'radio.png', '**Radio ESSECT – Votre Voix, Notre Fréquence** est la plateforme médiatique de l’ESSECT, Organisation à but non lucratif offrant aux étudiants un espace d’expression à travers actualités, débats, interviews et émissions culturelles. Elle couvre la vie universitaire tout en proposant du contenu éducatif et divertissant.', '2025-02-17', 'https://www.facebook.com/profile.php?id=61572903947925', 'https://radio.com', 0, 0, '2.jpg', '2.jpg'),
-(3, 'Enactus', 'enactus.png', 'Enactus ESSECT est une organisation estudiantine qui fait partie du réseau Enactus Tunisia, visant à promouvoir l’entrepreneuriat social parmi les étudiants de l’ESSECT. À travers des projets innovants et durables, ses membres mettent en œuvre des solutions à impact positif sur la société et l’environnement.', '2010-11-20', 'https://www.facebook.com/enactusessectunis', 'https://www.instagram.com/enactors.essect/', 2, 0, '3.png', 'enactor.png');
+(3, 'Enactus', 'enactus.png', 'Enactus ESSECT est une organisation estudiantine qui fait partie du réseau Enactus Tunisia, visant à promouvoir l’entrepreneuriat social parmi les étudiants de l’ESSECT. À travers des projets innovants et durables, ses membres mettent en œuvre des solutions à impact positif sur la société et l’environnement.', '2010-11-20', 'https://www.facebook.com/enactusessectunis', 'https://www.instagram.com/enactors.essect/', 3, 0, '3.png', 'enactor.png');
 
 -- --------------------------------------------------------
 
@@ -195,10 +195,14 @@ CREATE TABLE `club_members` (
 --
 
 INSERT INTO `club_members` (`id`, `user_id`, `club_id`, `adhesion_id`, `date_adhesion`, `statut_membre`, `departement_id`) VALUES
-(32, 22, 1, NULL, '2025-03-14 23:56:15', 'actif', 0),
 (33, 22, 1, NULL, '2025-03-14 23:56:15', 'actif', 8),
-(34, 56, 3, NULL, '2025-03-15 17:06:13', 'actif', 0),
-(35, 56, 3, NULL, '2025-03-15 17:06:13', 'actif', 9);
+(35, 56, 3, NULL, '2025-03-15 17:06:13', 'actif', 9),
+(39, 21, 1, NULL, '2025-03-15 20:30:11', 'actif', 6),
+(47, 55, 1, 38, '2025-03-21 00:13:04', 'actif', 6),
+(48, 57, 1, NULL, '2025-03-21 01:48:47', 'actif', 0),
+(49, 57, 1, NULL, '2025-03-21 01:48:47', 'actif', 7),
+(50, 36, 3, 25, '2025-03-21 01:56:45', 'actif', 0),
+(51, 36, 3, 25, '2025-03-21 01:56:45', 'actif', 10);
 
 --
 -- Déclencheurs `club_members`
@@ -231,8 +235,8 @@ CREATE TABLE `departements` (
 
 INSERT INTO `departements` (`id`, `club_id`, `nom`, `description`) VALUES
 (6, 1, 'Design', 'Responsable de la création visuelle, du développement graphique et de l&#039;esthétique des projets, garantissant une expérience visuelle cohérente et attractive.'),
-(7, 1, 'Communication : ', 'Gère les stratégies de communication interne et externe, assurant la diffusion efficace des messages et l&#039;engagement des publics cibles.'),
-(8, 1, 'Événements : ', 'Organise et coordonne les événements, en veillant à leur bon déroulement, leur impact et leur visibilité pour l&#039;institution ou l&#039;organisation.'),
+(7, 1, 'Communication ', 'Gère les stratégies de communication interne et externe, assurant la diffusion efficace des messages et l&#039;engagement des publics cibles.'),
+(8, 1, 'Événements ', 'Organise et coordonne les événements, en veillant à leur bon déroulement, leur impact et leur visibilité pour l&#039;institution ou l&#039;organisation.'),
 (9, 3, 'Projet et prospection ', 'Département projet : est la clé de plusieurs étapes :  l&#039;identification d&#039;une problématique, la recherche de solutions, la création de prototypes pour la faisabilité, et enfin, la mise en œuvre sur le marché.  L&#039;équipe a pour mission d&#039;accomplir le projet en alignant ses objectifs sur les principes de développement durable.'),
 (10, 3, 'Relations externes', 'Département Relations Externes :  est le moteur de financement de notre projet en travaillant avec des sponsors et en établissant des partenariats, tout en coordonnant la planification des événements.'),
 (11, 3, 'Département Communication et Marketing', 'Ce département a pour mission d’accroître la notoriété de notre club tout en mettant en avant nos projets et événements. Il veille à assurer une communication efficace par le biais de la conception d&#039;affiches, de la production de vidéos et de la rédaction de contenus.');
@@ -267,7 +271,6 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `phone`, `profile_im
 (23, 'Yasmine ben sta', 'yasmine@gmail.com', '$2y$12$XhtrV3D8ztX5t3kwIcJYUunxegR1XWH7sHwfZ1at9F/QCYKDClHU6', '00000004', 'secr.png', 0, 'étudiant', NULL),
 (25, 'Nour Cherni', 'nour@gmail.com', '$2y$12$N1U12DDmtUz2zrakWlgqy.LMSlQYoAKeuydzXoimVoZl7eVk5.pGa', '00000005', 'presidente.png', 0, 'étudiant', NULL),
 (26, 'Saief Bouali', 'saief@gmail.com', '$2y$12$g4UdWAr0FWOqE7MLUyJe2ebcdU5Y4yYwWlQ0D/BRyNhzuLHndGCVi', '00000006', 'vice-presidente.png', 0, 'étudiant', NULL),
-(35, 'admin', 'admin@gmail.com', '$2y$12$MJhUbFwMnwwb5P4eZL7APOIzUEGGu6qMkKBQaFImeoaSVaSpom0MO', '11111111', 'Capture d\'écran 2023-12-09 062329.png', 0, 'administrateur', NULL),
 (36, 'rayen souli', 'rayen@gmail.com', '$2y$12$8QvIVI2dP4mHK3y2nJ.2z.skCJzo6P.sSUMwwrVgK9QY6BngheTX.', '12121212', 'rayen souli.png', 0, 'étudiant', NULL),
 (37, 'fedi hamdi', 'fedi@gmail.com', '$2y$12$wBy2hLLpnFGMnkD44GIC3uckzbuQPaDHn7QLFUly0Qy1XXq13eMWW', '15151515', 'fedi hamdi.png', 0, 'étudiant', NULL),
 (38, 'mariem wannem', 'mariem@gmail.com', '$2y$12$S.B8VriUvzshnlHCs/P5s.AD0iUceU8NhLrfbbhcosc9O7oFJ0eE.', '14141414', 'mariem wannem.png', 0, 'étudiant', NULL),
@@ -288,7 +291,11 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `phone`, `profile_im
 (53, 'chef rayen', 'chefrayen@gmail.com', '$2y$12$qYysY1c2GFJvXqZV9NAcvejQ23IjsrOBnBpkRYLfHDCLqZAp/Ldhq', '13161514', NULL, 0, 'chef', 3),
 (54, 'chefoucema', 'chefoucema@gmail.com', '$2y$12$Q2CXnv62ZbaBgFP9X1QgLOGPtKQF2ZlhwrYAliExh/5wHp2ZRToKi', '16181419', NULL, 0, 'chef', 2),
 (55, 'arwa chattouti', 'arwa@gmail.com', '$2y$12$As0L/WWQcNiSHFT/pYgLZ.D/UqKGhNPURHsK1GpDi/RJ8IpmMMSWa', '95415251', 'arwa.jpg', 0, 'étudiant', NULL),
-(56, 'ghalia rahal', 'ghalia@gmail.com', '$2y$12$pEU7pGPm8iPplXyNo0SbvOe4oJTcjyC8reqtJPxz7SJHt35Io.OCG', '95847586', 'ghalia.jpg', 0, 'étudiant', NULL);
+(56, 'ghalia rahal', 'ghalia@gmail.com', '$2y$12$pEU7pGPm8iPplXyNo0SbvOe4oJTcjyC8reqtJPxz7SJHt35Io.OCG', '95847586', 'ghalia.jpg', 0, 'étudiant', NULL),
+(57, 'mohamed', 'mohamed@gmail.com', '$2y$12$t922/wNijlhUW0BGrwAb7.trDLQCw72AnD3QeSnBM.dxUy3GEOuhK', '01020145', 'radio.png', 0, 'étudiant', NULL),
+(58, 'admin', 'admin@gmail.com', '$2y$12$mupqnHW1tgwFrJBo63gI/.O1FXR.e/5deyVH6w0SVPENVOGeu8jkK', '11111111', '0.jpg', 0, 'administrateur', NULL),
+(59, 'sarra', 'sarra@gmail.com', '$2y$12$ozC70ViYD0xuyJ4uDzoReu3MWjqvfyTdqBrH0FJbtBZNcIxk/BBtO', '14251425', '1.png', 0, 'étudiant', NULL),
+(61, 'amin', 'amin@gmail.com', '$2y$12$4pAghgjUvuWKxflYCA2e7.TX4679FVUfDzN0RRncUaeYI3srw/NGK', '15959595', 'rayen souli.png', 0, 'étudiant', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -299,7 +306,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `phone`, `profile_im
 --
 ALTER TABLE `adhesions`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `email` (`email`,`club_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `club_id` (`club_id`);
 
@@ -360,7 +367,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `adhesions`
 --
 ALTER TABLE `adhesions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT pour la table `clubs`
@@ -384,7 +391,7 @@ ALTER TABLE `club_events`
 -- AUTO_INCREMENT pour la table `club_members`
 --
 ALTER TABLE `club_members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT pour la table `departements`
@@ -396,7 +403,7 @@ ALTER TABLE `departements`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- Contraintes pour les tables déchargées

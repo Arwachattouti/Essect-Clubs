@@ -30,7 +30,6 @@ class Bureau extends BaseModel {
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        // Ajouter un membre du bureau
         public function addBureauMember($user_id, $club_id, $responsabilite) {
             $query = "INSERT INTO club_bureau_members (user_id, club_id, responsabilite) 
                       VALUES (:user_id, :club_id, :responsabilite)";

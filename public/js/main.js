@@ -51,8 +51,6 @@
     $('#videoModal').on('hide.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc);
     })
-
-
     // Project carousel
     $(".project-carousel").owlCarousel({
         autoplay: true,

@@ -9,7 +9,6 @@ include '../includes/header1.php';
         height: 100%;
     }
 </style>
-<!-- Sidebar -->
 <div class="sidebar">
     <h4>Admin Panel</h4>
     <a href="statistics.php" class="nav-link">📊 Statistiques Globales </a>
@@ -18,8 +17,6 @@ include '../includes/header1.php';
     <a href="manage_chef.php" class="nav-link">📩 Gérer les responsables de clubs </a>
     <a href="logout.php" class="nav-link">Deconnexion </a>
 </div>
-
-<!-- Contenu principal -->
 <div class="content">
     <div class="container mt-5">
         <h2>Statistiques</h2>
@@ -70,7 +67,6 @@ include '../includes/header1.php';
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <!-- Graphiques -->
         <div class="mt-5">
             <h3>Répartition des Membres et des Événements</h3>
             <div class="row">
@@ -91,7 +87,6 @@ include '../includes/header1.php';
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    // Graphique des membres par club
     const membersByClubData = {
         labels: <?php echo json_encode(array_column($stats['clubs'], 'nom')); ?>,
         datasets: [{
@@ -114,14 +109,12 @@ include '../includes/header1.php';
             }
         }
     };
-
-    // Graphique des événements par club
     const eventsByClubData = {
         labels: <?php echo json_encode(array_column($stats['clubs'], 'nom')); ?>,
         datasets: [{
             label: 'Nombre d\'Événements',
             data: <?php echo json_encode(array_column($stats['clubs'], 'nb_evenements')); ?>,
-            backgroundColor: '#007bff', // Bleu
+            backgroundColor: '#007bff', 
             borderColor: '#0062cc',
             borderWidth: 1
         }]
@@ -138,8 +131,6 @@ include '../includes/header1.php';
             }
         }
     };
-
-    // Créer les graphiques
     new Chart(document.getElementById('membersByClubChart'), membersByClubConfig);
     new Chart(document.getElementById('eventsByClubChart'), eventsByClubConfig);
 </script>

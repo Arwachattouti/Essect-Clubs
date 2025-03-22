@@ -20,18 +20,17 @@ class ChefController extends BaseController{
     }
 
     public function getChefById($id) {
-        return $this->chefModel->getChefById($id); // Récupère un chef par son ID
+        return $this->chefModel->getChefById($id); 
     }
 
     public function createChef($username, $email, $password, $phone, $club_id) {
-        // Assurez-vous que la méthode addChef existe dans le modèle Chef et fonctionne correctement.
         $result = $this->chefModel->addOrUpdateChef($username, $email, $password, $phone, $club_id);
-        return $result; // Retourne true en cas de succès ou un message d'erreur
+        return $result;
     }
 
     public function editChef($id, $username, $email, $phone, $club_id) {
         $result = $this->chefModel->updateChef($id, $username, $email, $phone, $club_id);
-        return $result; // Retourne true ou un message d'erreur
+        return $result; 
     }
 
     public function removeChef($id) {
@@ -39,14 +38,12 @@ class ChefController extends BaseController{
     }
 }
 
-// Traitement des requêtes (POST)
 $controller = new ChefController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['action'])) {
         if ($_POST['action'] == 'add') {
-            // Vous pouvez valider ici les données, puis les passer à la méthode createChef
-            $result = $controller->createChef($_POST['username'], $_POST['email'], $_POST['password'], $_POST['phone'], $_POST['club_id']);
+             $result = $controller->createChef($_POST['username'], $_POST['email'], $_POST['password'], $_POST['phone'], $_POST['club_id']);
             if ($result === true) {
                 $_SESSION['success_message'] = "Chef ajouté avec succès.";
             } else {

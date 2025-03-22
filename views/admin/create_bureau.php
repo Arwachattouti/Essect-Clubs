@@ -1,7 +1,7 @@
 <?php 
 include_once __DIR__ . '/../includes/header1.php'; 
 require_once __DIR__ . '/../../controllers/BureauController.php';
-$club_id = intval($_GET['id']); // Utilisation de l'ID validé
+$club_id = intval($_GET['id']); 
 $controller = new BureauController();
 $controller->createBureauMember();
 ?>
@@ -32,13 +32,11 @@ $controller->createBureauMember();
         <?php endif; ?>
 
         <form action="" method="POST" enctype="multipart/form-data">
-            <!-- Sélectionner un utilisateur (user_id) -->
             <div class="form-group">
                 <label for="user_id">Utilisateur :</label>
                 <select class="form-control" name="user_id" required>
                     <?php
-                    // Récupérer les utilisateurs via le contrôleur
-                    $users = $controller->getUsers();
+                     $users = $controller->getUsers();
                     foreach ($users as $user) {
                         echo '<option value="' . $user['id'] . '">' . $user['username'] . '</option>';
                     }
@@ -46,13 +44,11 @@ $controller->createBureauMember();
                 </select>
             </div>
 
-            <!-- Champ pour la responsabilité (responsabilite) -->
-            <div class="form-group">
+           <div class="form-group">
                 <label for="responsabilite">Responsabilité :</label>
                 <input type="text" class="form-control" name="responsabilite" required>
             </div>
 
-            <!-- Champ caché pour l'id du club -->
             <input type="hidden" name="club_id" value="<?php echo $club_id; ?>">
             <button type="submit" class="btn btn-success">Ajouter</button>
         </form>

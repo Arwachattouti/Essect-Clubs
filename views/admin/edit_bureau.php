@@ -10,8 +10,6 @@ if (!$bureau) {
     echo "<p>Membre du bureau non trouvé.</p>";
     exit;
 }
-
-// Mise à jour des données si formulaire soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = intval($_POST['user_id']);
     $responsabilite = htmlspecialchars($_POST['responsabilite']);
@@ -25,8 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: detail_club.php?id=$id");
     exit;
 }
-
-// Liste des utilisateurs pour le formulaire
 $users = $controller->getUsers();
 ?>
 

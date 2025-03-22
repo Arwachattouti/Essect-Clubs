@@ -24,20 +24,16 @@ class ClubController extends BaseController {
                 $logoExtension = pathinfo($logoName, PATHINFO_EXTENSION);
                 $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
                 if (in_array(strtolower($logoExtension), $allowedExtensions)) {
-                    // Créer un nom unique pour le fichier
+                
                     $newLogoName = uniqid('', true) . '.' . $logoExtension;
                     $uploadDirectory = $_SERVER['DOCUMENT_ROOT'] . '/clubs/public/img/clubsessect/';
     
-                    // Vérifier si le répertoire d'upload existe, sinon le créer
                     if (!is_dir($uploadDirectory)) {
-                        mkdir($uploadDirectory, 0777, true); // Créer le répertoire si nécessaire
+                        mkdir($uploadDirectory, 0777, true); 
                     }
     
                     $uploadPath = $uploadDirectory . $newLogoName;
-    
-                    // Déplacer le fichier dans le répertoire de destination
                     if (move_uploaded_file($logoTmpName, $uploadPath)) {
-                        // Gérer le téléchargement des images slides
                         $img_slide1 = null;
                         $img_slide2 = null;
     
@@ -69,11 +65,9 @@ class ClubController extends BaseController {
                             }
                         }
     
-                        // Appeler la méthode pour insérer le club
                         $errorMessage = $clubModel->createClub($nom, $description, $date_creation, $facebook_link, $instagram_link, $nb_membre, $nb_partenaires, $img_slide1, $img_slide2, $newLogoName);
                         if ($errorMessage === null) {
-                            // Redirection après l'insertion réussie
-                            header("Location: ../admin/manage_clubs.php");
+                           header("Location: ../admin/manage_clubs.php");
                             exit();
                         } else {
                             $errorMessage = "Erreur lors de l'ajout du club.";
@@ -89,7 +83,6 @@ class ClubController extends BaseController {
             }
         }
     
-        // Rendre la vue de création avec le message d'erreur si nécessaire
         $this->render('create_club', ['errorMessage' => $errorMessage]);
     }
     public function getClubById($id) {
@@ -110,12 +103,10 @@ class ClubController extends BaseController {
         } else {
             $_SESSION['error_message'] = "Type de fichier non autorisé pour $fileName.";
         }
-        return $currentFile; // Si l'upload échoue, retourner l'ancien fichier.
+        return $currentFile; 
     }
 
-    // Méthode pour mettre à jour les informations du club
     public function updateClub($clubId, $nom, $description, $date_creation, $facebook_link, $instagram_link, $nb_membre, $nb_partenaires, $logo, $img_slide1, $img_slide2) {
-        // Appel de la méthode handleFileUpload pour gérer les fichiers
         $logo = $this->handleFileUpload('logo', $logo);
         $img_slide1 = $this->handleFileUpload('img_slide1', $img_slide1);
         $img_slide2 = $this->handleFileUpload('img_slide2', $img_slide2);
@@ -142,19 +133,13 @@ class ClubController extends BaseController {
         }
     }
     
-    
-    
-    // Méthode index pour lister les clubs
-    public function index() {
+     public function index() {
         $clubs = $this->clubModel->getAllClubs();
         $this->render('admin/manage_clubs', ['clubs' => $clubs]);
     }
-    // app/controllers/ClubController.php
     public function manageClubs() {
-    // Récupérer tous les clubs depuis le modèle
-    $clubs = $this->clubModel->getAllClubs(); 
+     $clubs = $this->clubModel->getAllClubs(); 
     
-    // Retourner les clubs pour les utiliser dans la vue
     return $clubs;
 }
     public function afficherClubs() {
@@ -164,7 +149,6 @@ class ClubController extends BaseController {
         return  $this->clubModel->getClubById($id);
     }
     
-    // Modifier un club existant
     public function edit($id) {
         $club = $this->clubModel->getClubById($id);
 
@@ -189,7 +173,7 @@ class ClubController extends BaseController {
         }
     
         header("Location: ../admin/manage_clubs.php");
-        exit(); // ✅ Arrêter l'exécution après la redirection
+        exit(); 
     }
     
 

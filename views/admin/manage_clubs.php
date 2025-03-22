@@ -2,7 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../controllers/ClubController.php';
 $controller = new ClubController();
-$clubs = $controller->manageClubs(); // Récupération des clubs
+$clubs = $controller->manageClubs(); 
 include '../includes/header1.php';
 ?>
 <style>

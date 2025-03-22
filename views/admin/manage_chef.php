@@ -6,10 +6,8 @@ $controller = new ChefController();
 $chefs = $controller->listChefs();
 
 $edit_id = isset($_GET['edit_id']) ? $_GET['edit_id'] : null;
-
-// Si un ID de chef est passé en GET, récupérez les informations de ce chef
 if ($edit_id) {
-    $chef = $controller->getChefById($edit_id); // Récupérer les informations du chef par son ID
+    $chef = $controller->getChefById($edit_id); 
     if ($chef === null) {
         echo "Chef introuvable.";
         exit;
@@ -36,7 +34,6 @@ if ($edit_id) {
 
 <div class="container mt-5">
     <h2 class="text-center">Gérer les chefs de clubs</h2>
-    <!-- Affichage des messages de succès ou d'erreur après le titre -->
     <?php if (isset($_SESSION['success_message'])): ?>
         <p class="alert alert-success">
             <?php echo $_SESSION['success_message']; ?>
@@ -50,12 +47,10 @@ if ($edit_id) {
         </p>
         <?php unset($_SESSION['error_message']); ?>
     <?php endif; ?><br>
-    <!-- Bouton pour ajouter un chef -->
     <div class="mb-4 text-center">
         <a href="manage_chef.php?add_new=true" class="btn btn-success">Ajouter un chef</a>
     </div>
 
-    <!-- Formulaire pour ajouter un chef -->
     <?php if (isset($_GET['add_new'])) : ?>
         <form action="manage_chef.php" method="POST">
         <input type="hidden" name="action" value="add">
@@ -89,11 +84,10 @@ if ($edit_id) {
     </form>
     <?php endif; ?>
 
-    <!-- Formulaire pour modifier un chef -->
-    <?php if ($edit_id && isset($chef)) : ?>
+   <?php if ($edit_id && isset($chef)) : ?>
         <form action="manage_chef.php" method="POST">
             <input type="hidden" name="action" value="edit">
-            <input type="hidden" name="id" value="<?php echo $chef['id']; ?>"> <!-- ID caché -->
+            <input type="hidden" name="id" value="<?php echo $chef['id']; ?>"> 
 
             <div class="form-group">
                 <label for="username">Nom d'utilisateur :</label>
@@ -119,7 +113,6 @@ if ($edit_id) {
         </form>
     <?php endif; ?>
 
-    <!-- Liste des chefs -->
     <table class="table mt-4">
         <thead>
             <tr>

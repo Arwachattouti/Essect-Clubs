@@ -1,11 +1,9 @@
-<!-- app/views/admin/manage_users.php -->
+
 <?php 
 session_start();
-
 require_once __DIR__ . '/../../controllers/UserController.php';
-
 $controller = new UserController();
-$users = $controller->getAllUsers(); // Récupération des utilisateurs
+$users = $controller->getAllUsers();
  include '../includes/header1.php' ;  
 ?>
 <style>
@@ -13,7 +11,6 @@ $users = $controller->getAllUsers(); // Récupération des utilisateurs
         height: 100%;
     }
 </style>
-    <!-- Sidebar -->
     <div class="sidebar">
     <h4>Admin Panel</h4>
     <a href="statistics.php" class="nav-link">📊 Statistiques Globales </a>
@@ -22,12 +19,10 @@ $users = $controller->getAllUsers(); // Récupération des utilisateurs
     <a href="manage_chef.php" class="nav-link">📩 Gérer les responsables de clubs </a>
     <a href="logout.php" class="nav-link">Deconnexion </a>
 </div>
-
-    <!-- Contenu principal -->
     <div class="content">
     <div class="container mt-5">
     <h2 class="text-center">Gestion des Utilisateurs</h2>
-    <?php  // Affichage des messages de session
+    <?php  
 if (isset($_SESSION['success_message'])) {
     echo "<div class='alert alert-success'>{$_SESSION['success_message']}</div>";
     unset($_SESSION['success_message']);

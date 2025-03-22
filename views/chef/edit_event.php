@@ -1,30 +1,20 @@
 <?php
 require_once __DIR__ . '/../../controllers/EventController.php';
-
-// Vérifier si event_id et club_id sont bien passés en paramètre dans l'URL
 if (!isset($_GET['event_id']) || !isset($_GET['club_id'])) {
     die("ID de l'événement ou du club manquant.");
 }
-
-// Récupérer l'ID de l'événement et du club depuis l'URL
 $event_id = intval($_GET['event_id']);
 $club_id = intval($_GET['club_id']);
-// Créer une instance du contrôleur
 $controller = new EventController();
-
-// Traiter la soumission du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Vérifier si toutes les données du formulaire sont présentes
     if (!isset($_POST['titre'], $_POST['description'], $_POST['date'], $_POST['lieu'], $_POST['status'], $_POST['participants'], $_POST['capacity'])) {
         die("Tous les champs doivent être remplis.");
     }
-    // Mettre à jour l'événement avec les nouveaux champs
     $controller->update($event_id, $_POST['titre'], $_POST['description'], $_POST['date'], $_POST['lieu'], $_POST['status'], $_POST['participants'], $_POST['capacity']);
-    // Redirection après la mise à jour
+ 
     header("Location: chef/manage_events.php?id=1");
     exit();
 } else {
-    // Récupérer les détails de l'événement pour affichage
     $event = $controller->getEventById($event_id);
     if (!$event) {
         die("Événement non trouvé.");

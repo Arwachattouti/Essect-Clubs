@@ -15,32 +15,26 @@ $bureauMembres = $bureauController->getBureauMembersByClubId($id);
 $departements = $departementController->getDepartementsByClubId($id);
 
 function displayList($items, $emptyMessage, $type) {
-    // Vérifier si la liste des éléments est vide
     if (empty($items)) {
         echo '<p>' . htmlspecialchars($emptyMessage) . '</p>';
         return;
     }
-
-    // Démarrer un conteneur avec une classe CSS
     echo '<div class="bureau-container">';
 
-    // Afficher les éléments
     foreach ($items as $item) {
-        // Vérification du type et affichage des éléments en conséquence
         switch ($type) {
             case 'bureau':
-                echo '<div class="bureau-item">';  // Chaque élément dans un bloc
+                echo '<div class="bureau-item">';  
                 echo '<article class="event-item">';
-                // Affichage du nom d'utilisateur (username)
                 echo '<center><header><h3>' . htmlspecialchars($item['username']) . '</h3></header></center>';
-                // Affichage de la responsabilité
+             
                 echo '<center><p class="bureau-responsabilite">' . htmlspecialchars($item['responsabilite']) . '</p></center>';
-                // Lien pour modifier l'élément
+            
                 echo '<footer class="event-actions">';
                 echo '<center><a href="../admin/edit_bureau.php?id=' . $item['id']  . '" class="btn-edit">✏️ Modifier</a></center>';
                 echo '</footer>';
                 echo '</article>';
-                echo '</div>';  // Fin de l'élément
+                echo '</div>';  
                 break;
         
     
@@ -73,12 +67,12 @@ function displayList($items, $emptyMessage, $type) {
     .bureau-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Espacement entre les éléments */
-    justify-content: space-between; /* Espacement entre les lignes */
+    gap: 30px; 
+    justify-content: space-between; 
 }
 
 .bureau-item {
-    width: 30%; /* Chaque élément prendra environ 30% de la largeur */
+    width: 30%; 
     box-sizing: border-box;
 }
 
@@ -148,17 +142,15 @@ function displayList($items, $emptyMessage, $type) {
 
             <hr>
 
-            <!-- Section Membres et Départements dans le même bloc -->
+            
 <div class="card shadow-sm p-4 mt-4">
     <div class="row">
-        <!-- Membres du Bureau -->
         <div class="col-md-6">
             <h2 class="text-primary">Membres du bureau</h2>
             <a href="create_bureau.php?id=<?php echo $id; ?>" class="btn btn-success mb-3">
                 + Ajouter un membre
             </a>
 
-            <!-- Affichage des membres du bureau -->
             <?php 
                 if (!empty($bureauMembres)) {
                     displayList($bureauMembres, "Aucun membre du bureau trouvé.", "bureau");
@@ -169,14 +161,11 @@ function displayList($items, $emptyMessage, $type) {
         </div>
     </div>
     <div class="row">
-        <!-- Départements -->
-        <div class="col-md-6">
+       <div class="col-md-6">
             <h2 class="text-primary">Départements</h2>
             <a href="create_departement.php?id=<?php echo $id; ?>" class="btn btn-success mb-3">
                 + Ajouter un département
             </a>
-
-            <!-- Affichage des départements -->
             <?php 
                 if (!empty($departements)) {
                     displayList($departements, "Aucun département trouvé.", "departement");

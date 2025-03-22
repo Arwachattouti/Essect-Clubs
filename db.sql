@@ -7,7 +7,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 15 mars 2025 à 20:09
+-- Généré le : ven. 21 mars 2025 à 01:08
 -- Version du serveur : 11.4.4-MariaDB-log
 -- Version de PHP : 8.4.1
 
@@ -52,12 +52,9 @@ CREATE TABLE `adhesions` (
 --
 
 INSERT INTO `adhesions` (`id`, `user_id`, `club_id`, `full_name`, `birthdate`, `email`, `phone`, `gender`, `skills`, `hobbies`, `reason`, `statut`, `cv_pdf_path`) VALUES
-(20, 21, 1, 'Maha Noureddine', '1111-11-11', 'maha@gmail.com', '00000002', 'Femme', '2', 'jo', '25', 'en attente', '1741999268_digital.docx'),
 (25, 36, 3, 'rayen souli', '1222-12-12', 'rayen@gmail.com', '12121212', 'Homme', 'a', 'a', 'a', 'en attente', '1742056858_cv1 - Copy.pdf'),
-(27, 37, 1, 'fedi hamdi', '1111-11-11', 'fedi@gmail.com', '15151515', 'Homme', 'a', 'aa', 'a', 'en attente', '1742057079_resumer javafx.docx'),
-(29, 56, 1, 'arwa chattouti', '1111-11-11', 'arwa@gmail.com', '95415251', 'Femme', 'jj', 'dd', 'ree', 'en attente', '1742068637_rapport ppp.docx'),
-(30, 56, 1, 'bennaceur eya ', '4152-02-15', 'eya@gmail.com', '15241525', 'Femme', 'az', 'rf', 'fr', 'en attente', '1742069151_phpppp.docx'),
-(31, 56, 1, 'wassim jha', '2525-12-05', 'wassim@gmail.com', '00000000', 'Homme', 'h', 'g', 'tr', 'en attente', '1742069229_rapport ppp.docx');
+(38, 55, 1, 'arwa chattouti', '1111-11-11', 'arwa@gmail.com', '95415251', 'Femme', 'gfjgj', 'gj', 'ygjj', 'accepté', '1742507054_cv1.pdf'),
+(49, 54, 1, 'chef oucema', '5122-02-14', 'oucema@gmail.com', '11412512', 'Homme', 'g', 'g', 'hh', 'refusé', '1742511549_1742511358_1742507122_cv1 - Copy.pdf');
 
 --
 -- Déclencheurs `adhesions`
@@ -97,7 +94,7 @@ CREATE TABLE `clubs` (
 --
 
 INSERT INTO `clubs` (`id`, `nom`, `logo`, `description`, `date_creation`, `facebook_link`, `instagram_link`, `nb_membre`, `nb_partenaires`, `img_slide1`, `img_slide2`) VALUES
-(1, 'InfoLab', 'infolab.jpg', 'Club InfoLab ESSECT est  une organisation à but non lucratif à l\'ESSECT. Il regroupe des étudiants passionnés de technologie, design, communication et organisation d’événements pour les aider à développer leurs compétences et enrichir leur parcours. Il propose des formations, ateliers et événements pour favoriser la collaboration et l’innovation  .', '2022-09-25', 'https://www.facebook.com/profile.php?id=100086193647142', 'https://www.instagram.com/infolab_essect/', 4, 0, '1.png', '2.png'),
+(1, 'InfoLab', 'infolab.jpg', 'Club InfoLab ESSECT est  une organisation à but non lucratif à l\'ESSECT. Il regroupe des étudiants passionnés de technologie, design, communication et organisation d’événements pour les aider à développer leurs compétences et enrichir leur parcours. Il propose des formations, ateliers et événements pour favoriser la collaboration et l’innovation  .', '2022-09-25', 'https://www.facebook.com/profile.php?id=100086193647142', 'https://www.instagram.com/infolab_essect/', 9, 0, '1.png', '2.png'),
 (2, 'Radio', 'radio.png', '**Radio ESSECT – Votre Voix, Notre Fréquence** est la plateforme médiatique de l’ESSECT, Organisation à but non lucratif offrant aux étudiants un espace d’expression à travers actualités, débats, interviews et émissions culturelles. Elle couvre la vie universitaire tout en proposant du contenu éducatif et divertissant.', '2025-02-17', 'https://www.facebook.com/profile.php?id=61572903947925', 'https://radio.com', 0, 0, '2.jpg', '2.jpg'),
 (3, 'Enactus', 'enactus.png', 'Enactus ESSECT est une organisation estudiantine qui fait partie du réseau Enactus Tunisia, visant à promouvoir l’entrepreneuriat social parmi les étudiants de l’ESSECT. À travers des projets innovants et durables, ses membres mettent en œuvre des solutions à impact positif sur la société et l’environnement.', '2010-11-20', 'https://www.facebook.com/enactusessectunis', 'https://www.instagram.com/enactors.essect/', 2, 0, '3.png', 'enactor.png');
 
@@ -195,10 +192,10 @@ CREATE TABLE `club_members` (
 --
 
 INSERT INTO `club_members` (`id`, `user_id`, `club_id`, `adhesion_id`, `date_adhesion`, `statut_membre`, `departement_id`) VALUES
-(32, 22, 1, NULL, '2025-03-14 23:56:15', 'actif', 0),
 (33, 22, 1, NULL, '2025-03-14 23:56:15', 'actif', 8),
-(34, 56, 3, NULL, '2025-03-15 17:06:13', 'actif', 0),
-(35, 56, 3, NULL, '2025-03-15 17:06:13', 'actif', 9);
+(35, 56, 3, NULL, '2025-03-15 17:06:13', 'actif', 9),
+(39, 21, 1, NULL, '2025-03-15 20:30:11', 'actif', 6),
+(47, 55, 1, 38, '2025-03-21 00:13:04', 'actif', 6);
 
 --
 -- Déclencheurs `club_members`
@@ -299,7 +296,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `phone`, `profile_im
 --
 ALTER TABLE `adhesions`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `email` (`email`,`club_id`),
   ADD KEY `user_id` (`user_id`),
   ADD KEY `club_id` (`club_id`);
 
@@ -360,7 +357,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `adhesions`
 --
 ALTER TABLE `adhesions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT pour la table `clubs`
@@ -384,7 +381,7 @@ ALTER TABLE `club_events`
 -- AUTO_INCREMENT pour la table `club_members`
 --
 ALTER TABLE `club_members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT pour la table `departements`

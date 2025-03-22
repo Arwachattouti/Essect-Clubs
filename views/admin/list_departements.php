@@ -1,4 +1,4 @@
-list.php
+
 <?php include_once __DIR__ . '/../includes/header1.php'; ?>
 
 <div class="container mt-4">

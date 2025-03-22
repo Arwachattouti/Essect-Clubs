@@ -1,7 +1,5 @@
 <?php 
 require '../includes/header1.php' ?> 
-<!-- Sidebar -->
-
 <div class="sidebar">
     <h4>Admin Panel</h4>
     <a href="statistics.php" class="nav-link">📊 Statistiques Globales </a>
@@ -10,8 +8,6 @@ require '../includes/header1.php' ?>
     <a href="manage_chef.php" class="nav-link">📩 Gérer les responsables de clubs </a>
     <a href="logout.php" class="nav-link">Deconnexion </a>
 </div>
-
-<!-- Contenu principal -->
 <div class="content">
     <h1 class="text-center">Tableau de bord de l'Administrateur</h1>
     <div id="content-area">

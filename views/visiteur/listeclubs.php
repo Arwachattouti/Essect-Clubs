@@ -2,9 +2,8 @@
 require_once __DIR__ . '/../../controllers/ClubController.php';
 include '../includes/header.php';
 $controller = new ClubController();
-$clubs = $controller->afficherClubs(); // Récupérer les clubs
+$clubs = $controller->afficherClubs(); 
 ?>
-<!-- Carousel Start -->
 <div class="container-fluid px-0 mb-5">
     <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -43,15 +42,13 @@ $clubs = $controller->afficherClubs(); // Récupérer les clubs
         </button>
     </div>
 </div>
-<!-- Clubs Section -->
 <div id="unitIndex" class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h1 class="display-5 mb-5">les clubs que nous avons</h1>
+            <h1 class="display-5 mb-5">Nos Clubs</h1>
         </div>
         <div class="row g-4">
             <?php 
-            // Vérifier si $clubs est défini et non vide
             if (empty($clubs)) {
                 echo "<p>Aucun club trouvé.</p>";
             } else {
@@ -66,7 +63,7 @@ $clubs = $controller->afficherClubs(); // Récupérer les clubs
                                 <p class="mb-0"><?php echo htmlspecialchars($club['description']); ?></p>
                             </div>
                             <div class="service-btn rounded-0 rounded-bottom">
-                                <a class="text-primary fw-medium" href="detailclub.php?id=<?php echo $club['id']; ?>">Read More<i class="bi bi-chevron-double-right ms-2"></i></a>
+                                <a class="text-primary fw-medium" href="detailclub.php?id=<?php echo $club['id']; ?>">Voir plus<i class="bi bi-chevron-double-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -149,10 +146,8 @@ $clubs = $controller->afficherClubs(); // Récupérer les clubs
             </div>
         </div>
     </div>
-    <!-- gallery End -->
 
     <script>
-        // Function to animate the value increase
         function animateValue(element, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
@@ -165,10 +160,9 @@ $clubs = $controller->afficherClubs(); // Récupérer les clubs
             };
             window.requestAnimationFrame(step);
         }
-        // Call the animateValue function with the desired values and durations
-        animateValue(document.getElementById("membersValue"), 0, 220, 2000); // Example: 0 to 220 in 2 seconds
-        animateValue(document.getElementById("partnershipValue"), 0, 5, 1500); // Example: 0 to 5 in 1.5 seconds
-        animateValue(document.getElementById("projectsValue"), 0, 15, 2500); // Example: 0 to 15 in 2.5 seconds
-        animateValue(document.getElementById("startingYearValue"), 2024, 2013, 2500); // Example: 0 to 15 in 2.5 seconds
+        animateValue(document.getElementById("membersValue"), 0, 220, 2000); 
+        animateValue(document.getElementById("partnershipValue"), 0, 5, 1500); 
+        animateValue(document.getElementById("projectsValue"), 0, 15, 2500); 
+        animateValue(document.getElementById("startingYearValue"), 2024, 2013, 2500);
     </script>
 <?php include '../includes/footer.php'; ?>

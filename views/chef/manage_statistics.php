@@ -20,13 +20,8 @@ include '../includes/header1.php';
     body{
         height:150vh;}
 </style>
-
-<!-- Contenu principal -->
 <div class="content">
     <div class="container mt-5">
-       
-
-        <!-- Statistiques principales -->
         <h3>Résumé des Statistiques</h3>
         <div class="row">
             <div class="col-md-3">
@@ -66,10 +61,7 @@ include '../includes/header1.php';
                 </div>
             </div>
         </div>
-
-      <!-- Graphiques -->
 <div class="mt-5">
-    <!-- Canvas pour le graphique à barres -->
     <canvas id="eventParticipationChart" class="mt-4"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

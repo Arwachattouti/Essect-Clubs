@@ -52,16 +52,14 @@ $departements = $departementController->getDepartementsByClubId($clubid);
             </button>
         </div>
     </div>
-
     <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
-                <h1 class="display-6 mb-5 text-warning">Chapter Overview</h1>
+                <h1 class="display-6 mb-5 text-warning">Présentation du club</h1>
                 <p class="fs-5 fw-medium"><?php echo htmlspecialchars($club['description']) ?></p>
             </div>
         </div>
     </div>
-
     <div id="aboutUSindex" class="container-xxl py-5 text-center">
         <div class="container">
             <div class="row g-0 feature-row">
@@ -70,7 +68,7 @@ $departements = $departementController->getDepartementsByClubId($clubid);
                         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                             <img class="img-fluid" src="/clubs/public/img/icon/group.png" alt="Icon">
                         </div>
-                        <h5 class="mb-3">Members</h5>
+                        <h5 class="mb-3">Les Membres </h5>
                         <h4 class="mb-0" id="membersValue"><?php echo htmlspecialchars($club['nb_membre']) ?></h4>
                     </div>
                 </div>
@@ -79,7 +77,7 @@ $departements = $departementController->getDepartementsByClubId($clubid);
                         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                             <img class="img-fluid" src="/clubs/public/img/icon/handshake.png" alt="Icon">
                         </div>
-                        <h5 class="mb-3">Partnership</h5>
+                        <h5 class="mb-3">Les Partenaires</h5>
                         <h4 class="mb-0" id="partnershipValue"><?php echo htmlspecialchars($club['nb_partenaires']) ?></h4>
                     </div>
                 </div>
@@ -88,7 +86,7 @@ $departements = $departementController->getDepartementsByClubId($clubid);
                         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                             <img class="img-fluid" src="/clubs/public/img/icon/schedule.png" alt="Icon">
                         </div>
-                        <h5 class="mb-3">Starting Year</h5>
+                        <h5 class="mb-3">Date de début</h5>
                         <h4 class="mb-0" id="startingYearValue"><?php echo date('d M Y', strtotime($club['date_creation'])); ?></h4>
                     </div>
                 </div>
@@ -97,7 +95,7 @@ $departements = $departementController->getDepartementsByClubId($clubid);
                         <div class="btn-square bg-light rounded-circle mb-4" style="width: 64px; height: 64px;">
                             <img class="img-fluid" src="/clubs/public/img/icon/project.png" alt="Icon">
                         </div>
-                        <h5 class="mb-3">Events</h5>
+                        <h5 class="mb-3">Les Evénements</h5>
                         <h4 class="mb-0" id="projectsValue"><?php echo htmlspecialchars( $club['nb_evenements']) ?></h4>
                     </div>
                 </div>
@@ -118,8 +116,8 @@ $departements = $departementController->getDepartementsByClubId($clubid);
     <div id="teamindex" class="container-xxl py-4 d-flex justify-content-center">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="fs-5 fw-medium text-warning">Our Team</p>
-                <h4 class="display-6 mb-3">2025-2026 Mandate</h4>
+                <p class="fs-5 fw-medium text-warning">Bureau Exécutif</p>
+                <h4 class="display-6 mb-3">2025-2026 Mandat</h4>
             </div>
             <div class="row g-4 justify-content-center">
                 <?php
@@ -169,7 +167,7 @@ $departements = $departementController->getDepartementsByClubId($clubid);
 <div class="container-xxl py-4">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s">
-            <h4 class="display-6 mb-4">Nos Événements Principaux</h4>
+            <h4 class="display-6 mb-4">Nos Événements</h4>
             <section>
                 <div class="scroller event" data-direction="left" data-speed="slow">
                     <div class="scroller__inner">

@@ -10,12 +10,12 @@ $evenements = $Controller->getEventsByClubId($id);
         height: 100%;
     }
     .row {
-    row-gap: 5px; /* Espacement vertical entre les rangées */
-    column-gap: 5px; /* Espacement horizontal entre les colonnes */
+    row-gap: 5px; 
+    column-gap: 5px; 
 }
 
 .card {
-    margin: 80px; /* Ajoute un petit espacement autour de chaque carte */
+    margin: 80px; 
 }
 
 </style>
@@ -48,15 +48,15 @@ $evenements = $Controller->getEventsByClubId($id);
     <div class="row">
     <?php if (!empty($evenements)) : ?>
         <?php foreach ($evenements as $evenement) : ?>
-            <div class="col-md-3 col-sm-6 mb-3"> <!-- Réduction de la largeur -->
-                <div class="card" style="width: 200px; height: 250px; font-size: 14px;"> <!-- Largeur fixe -->
+            <div class="col-md-3 col-sm-6 mb-3"> 
+                <div class="card" style="width: 200px; height: 250px; font-size: 14px;"> 
                     <?php 
                     $formattedDate = isset($evenement['date']) ? date('d M Y', strtotime($evenement['date'])) : 'Date non précisée'; 
                     $imageUrl = !empty($evenement['image_principale']) ? htmlspecialchars($evenement['image_principale']) : 'path_to_default_image/default.jpg'; 
                     ?>
                     
-                    <img src="<?php echo $imageUrl; ?>" class="card-img-top" alt="Image de l'événement" style="height: 100px; object-fit: cover;"> <!-- Image plus petite -->
-                    <div class="card-body p-2"> <!-- Padding réduit -->
+                    <img src="<?php echo $imageUrl; ?>" class="card-img-top" alt="Image de l'événement" style="height: 100px; object-fit: cover;"> 
+                    <div class="card-body p-2"> 
                         <h6 class="card-title text-truncate"><?php echo htmlspecialchars($evenement['nom'] ?? $evenement['titre'] ?? 'Sans titre'); ?></h6>
                         <p class="card-text text-truncate"><?php echo htmlspecialchars($evenement['description'] ?? 'Aucune description'); ?></p>
                         <small><strong>Lieu:</strong> <?php echo htmlspecialchars($evenement['lieu'] ?? 'Non spécifié'); ?></small><br>

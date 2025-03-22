@@ -2,8 +2,6 @@
 session_start();
 require_once __DIR__ . '/../../controllers/MemberController.php';
 require_once __DIR__ . '/../../controllers/DepartementController.php';
-
-// Créer les instances des contrôleurs
 $departementController = new DepartementController();
 $departements = $departementController->getAllDepartementss();
 
@@ -18,16 +16,12 @@ if (!$member) {
     header("Location: manage_members.php?id=".$idclub);
     exit();
 }
-
-// Vérifier si le formulaire est soumis
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Validation des champs
     $username = isset($_POST['username']) ? trim($_POST['username']) : '';
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $departement = isset($_POST['departement']) ? intval($_POST['departement']) : 0;
     $statut = isset($_POST['statut']) ? $_POST['statut'] : '';
 
-    // Vérifier que les données sont valides
     if (empty($username) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL) || $departement == 0 || !in_array($statut, ['actif', 'inactif'])) {
         $_SESSION['error_message'] = "Veuillez remplir tous les champs correctement.";
     } else {
@@ -50,8 +44,6 @@ include '../includes/header1.php';
     <a href="manage_statistics.php?id=<?php echo $idclub; ?>" class="nav-link"> 📊 Consulter les statistiques du club </a>
     <a href="logout.php?id=<?php echo $idclub; ?>" class="nav-link"> 🚪 Déconnexion </a>
 </div>
-
-<!-- Contenu principal -->
 <div class="content">
     <div class="container mt-5">
         <h2>Modifier un membre</h2>

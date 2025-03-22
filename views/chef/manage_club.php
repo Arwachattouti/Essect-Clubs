@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $instagram_link = $_POST['instagram_link'];
     $nb_membre = $_POST['nb_membre'];
     $nb_partenaires = $_POST['nb_partenaires'];
-    $logo = $club['logo']; // Conserver l'ancien logo
-    $img_slide1 = $club['img_slide1']; // Conserver l'ancienne image slide1
-    $img_slide2 = $club['img_slide2']; // Conserver l'ancienne image slide2
+    $logo = $club['logo']; 
+    $img_slide1 = $club['img_slide1']; 
+    $img_slide2 = $club['img_slide2']; 
     $controller->updateClubchef($id, $nom, $description, $date_creation, $facebook_link, $instagram_link, $nb_membre, $nb_partenaires, $logo, $img_slide1, $img_slide2);
      
 }
@@ -87,7 +87,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Enregistrer les Modifications</button>
-               <!-- <a href="../chef/manage_club.php" class="btn btn-secondary">Annuler</a>-->
             </div>
         </form>
     </div>

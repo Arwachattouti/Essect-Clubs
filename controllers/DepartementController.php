@@ -13,13 +13,10 @@ class DepartementController extends BaseController {
         return $this->departementModel->getDepartementsByClubId($club_id);
    
     }
-    // Liste des départements
-    
     public function getAllDepartementss(){
        return  $this->departementModel->getAllDepartements();
 
     }
-    // Ajouter un département
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $nom = htmlspecialchars($_POST['nom']);
@@ -33,26 +30,24 @@ class DepartementController extends BaseController {
     }
     
 
-    // Modifier un département
-public function edit($id) {
-    $departement = $this->departementModel->getDepartementById($id);
-    if (!$departement) {
-        die("Département non trouvé !");
+   
+    public function edit($id) {
+        $departement = $this->departementModel->getDepartementById($id);
+        if (!$departement) {
+            die("Département non trouvé !");
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+           $nom = $_POST['nom'];
+            $club_id = $_POST['club_id'];
+            $description = $_POST['description']; 
+
+            return $this->departementModel->updateDepartement($id, $nom, $description);
+        }
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Récupérer toutes les données du formulaire
-        $nom = $_POST['nom'];
-        $club_id = $_POST['club_id'];
-        $description = $_POST['description']; 
 
-        return $this->departementModel->updateDepartement($id, $nom, $description);
-    }
-}
-
-
-    // Supprimer un département
-    public function delete($id) {
+     public function delete($id) {
         if ($this->departementModel->deleteDepartement($id)) {
             header("Location: " . BASE_URL . "/departement/list");
         } else {

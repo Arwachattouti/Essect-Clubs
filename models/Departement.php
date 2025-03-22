@@ -40,13 +40,7 @@ class Departement extends BaseModel {
     
 
     public function deleteDepartement($id) {
-        // Vérifier s'il y a des dépendances avant suppression
-        //$stmt = $this->db->prepare("SELECT COUNT(*) FROM users WHERE departement_id = :id");
-        //$stmt->execute(['id' => $id]);
-        //if ($stmt->fetchColumn() > 0) {
-            //return false; // Impossible de supprimer
-        //}
-
+       
         $stmt = $this->db->prepare("DELETE FROM departements WHERE id = :id");
         return $stmt->execute(['id' => $id]);
     }

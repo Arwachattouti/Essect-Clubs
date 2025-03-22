@@ -2,8 +2,6 @@
 session_start();
 require_once __DIR__ . '/../../controllers/UserController.php';
 $controller = new UserController();
-
-// Vérifier si un ID est présent dans l'URL
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     $_SESSION['error_message'] = "ID utilisateur manquant.";
     header("Location: manage_users.php");
@@ -23,8 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
     $role = $_POST['role'];
     $image_path = isset($user['profile_image']) ? $user['profile_image'] : 'default.png';
-
-    // Vérifier si une nouvelle image est téléchargée
     if (!empty($_FILES['profile_image']['name'])) {
         $uploadDir = $_SERVER['DOCUMENT_ROOT'] . "/clubs/public/img/clubsessect/";
         $fileName = basename($_FILES['profile_image']['name']);
@@ -33,11 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $allowedTypes = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($fileType, $allowedTypes)) {
-            // Supprimer l'ancienne image si elle existe
             if (!empty($user['image_path']) && file_exists($uploadDir . $user['image_path'])) {
                 unlink($uploadDir . $user['image_path']);
             }
-            // Déplacer le fichier uploadé
             if (move_uploaded_file($_FILES['profile_image']['tmp_name'], $filePath)) {
                 $image_path = $fileName;
             } else {
@@ -47,8 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['error_message'] = "Type de fichier non autorisé.";
         }
     }
-
-    // Mise à jour de l'utilisateur avec la nouvelle image si nécessaire
     if ($controller->updateUser($userId, $username, $email, $role, $image_path)) {
         $_SESSION['success_message'] = "Utilisateur mis à jour avec succès.";
         header("Location: manage_users.php");
@@ -73,8 +65,6 @@ include '../includes/header1.php';
     <a href="manage_chef.php" class="nav-link">📩 Gérer les responsables de clubs </a>
     <a href="logout.php" class="nav-link">Deconnexion </a>
 </div>
-
-<!-- Contenu principal -->
 <div class="content">
     <div class="container mt-5">
         <h2>Modifier l'utilisateur</h2>

@@ -35,18 +35,18 @@ $clubs = $controller->afficherClubs();
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span class="visually-hidden">précédent</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span class="visually-hidden">Aprés</span>
         </button>
     </div>
 </div>
 <div id="unitIndex" class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h1 class="display-5 mb-5">Our Clubs</h1>
+            <h1 class="display-5 mb-5">Nos Clubs</h1>
         </div>
         <div class="row g-4">
             <?php 
@@ -64,7 +64,7 @@ $clubs = $controller->afficherClubs();
                                 <p class="mb-0"><?php echo htmlspecialchars($club['description']); ?></p>
                             </div>
                             <div class="service-btn rounded-0 rounded-bottom">
-                                <a class="text-primary fw-medium" href="detailclub.php?id=<?php echo $club['id']; ?>">Read More<i class="bi bi-chevron-double-right ms-2"></i></a>
+                                <a class="text-primary fw-medium" href="detailclub.php?id=<?php echo $club['id']; ?>">Voir plus<i class="bi bi-chevron-double-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ $clubs = $controller->afficherClubs();
     <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" >
-                <h1 class="display-6 mb-3">Take a look at our Gallery</h1>
+                <h1 class="display-6 mb-3">Jetez un œil à notre galerie</h1>
                 <section>
                     <div class="scroller" data-direction="left" data-speed="slow">
                         <div class="scroller__inner">
@@ -100,10 +100,11 @@ $clubs = $controller->afficherClubs();
                     </div>
                     <div class="scroller" data-direction="left" data-speed="slow">
                         <div class="scroller__inner border-text">
-                                <h3>Creating memories</h3>
-                                <h3>Capturing Moments</h3>
-                                <h3>Moments to Remember</h3>
-                                <h3>Unforgettable Highlights</h3>
+                        <h3>Créer des souvenirs</h3>
+                        <h3>Capturer des moments</h3>
+                        <h3>Des moments à se souvenir</h3>
+                        <h3>Des moments inoubliables</h3>
+
                         </div>
                     </div>
                     <div class="scroller" data-direction="right" data-speed="slow">
@@ -146,10 +147,8 @@ $clubs = $controller->afficherClubs();
             </div>
         </div>
     </div>
-    <!-- gallery End -->
 
     <script>
-        // Function to animate the value increase
         function animateValue(element, start, end, duration) {
             let startTimestamp = null;
             const step = (timestamp) => {
@@ -162,10 +161,9 @@ $clubs = $controller->afficherClubs();
             };
             window.requestAnimationFrame(step);
         }
-        // Call the animateValue function with the desired values and durations
-        animateValue(document.getElementById("membersValue"), 0, 220, 2000); // Example: 0 to 220 in 2 seconds
-        animateValue(document.getElementById("partnershipValue"), 0, 5, 1500); // Example: 0 to 5 in 1.5 seconds
-        animateValue(document.getElementById("projectsValue"), 0, 15, 2500); // Example: 0 to 15 in 2.5 seconds
-        animateValue(document.getElementById("startingYearValue"), 2024, 2013, 2500); // Example: 0 to 15 in 2.5 seconds
+        animateValue(document.getElementById("membersValue"), 0, 220, 2000); 
+        animateValue(document.getElementById("partnershipValue"), 0, 5, 1500); 
+        animateValue(document.getElementById("projectsValue"), 0, 15, 2500); 
+        animateValue(document.getElementById("startingYearValue"), 2024, 2013, 2500);
     </script>
 <?php include '../includes/footer2.php'; ?>

@@ -1,10 +1,9 @@
 <?php 
 include_once __DIR__ . '/../includes/header1.php'; 
 require_once __DIR__ . '/../../controllers/EventController.php';
-// Créer une instance du contrôleur
+
 $controller = new EventController();
 $id = intval($_GET['id']);
-// Appeler la méthode pour traiter la connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $controller->create();
 } 

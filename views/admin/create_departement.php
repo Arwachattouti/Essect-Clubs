@@ -1,9 +1,8 @@
 <?php include_once __DIR__ . '/../includes/header1.php'; 
 require_once __DIR__ . '/../../controllers/DepartementController.php';
-// Créer une instance du contrôleur
+
 $controller = new DepartementController();
 $club_id = intval($_GET['id']);
-// Appeler la méthode pour traiter la connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $controller->create();
     header("Location: detail_club.php?id=".$club_id);

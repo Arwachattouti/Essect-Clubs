@@ -79,7 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'], $_POST['adh
                                         <button type="submit" class="btn btn-danger btn-sm">Refuser</button>
                                     </form>
 
-                                    <!-- Bouton "Détails" menant à une nouvelle page -->
                                     <a href="detail_adhesion.php?idA=<?= $adhesion['id']; ?>&id=<?= $club_id; ?>" class="btn btn-info btn-sm">Détails</a>
                                  </td>
                             </tr>

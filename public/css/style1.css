@@ -272,63 +272,8 @@
     }
 }
 
-.gallery-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/4.jpg) center center no-repeat;
-    background-size: cover;
-}
-.events-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/sb/gallery/a0.jpg) center center no-repeat;
-    background-size: cover;
-}
-.events-ras-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/ras/img/2.jpg) center center no-repeat;
-    background-size: cover; 
-}
-.events-pes-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/pes/img/6.jpg) center center no-repeat;
-    background-size: cover;    
-}
-.events-ias-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/ias/img/0.jpg) center center no-repeat;
-    background-size: cover;   
-}
-.events-aess-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/aess/img/9.jpg) center center no-repeat;
-    background-size: cover;   
-  
-}
-.events-sight-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/sight/img/1.jpg) center center no-repeat;
-    background-size: cover;   
-}
-.events-wie-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/wie/1.jpg) center center no-repeat;
-    background-size: cover;   
-}
-.events-cs-header{
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../unit/cs/1.jfif) center center no-repeat;
-    background-size: cover;   
-}
-.event-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/7.jpg) center center no-repeat;
-    background-size: cover;
-}
-.alumni2-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/3.jpg) center center no-repeat;
-    background-size: cover;
-}
-.alumni-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/20.jpg) center center no-repeat;
-    background-size: cover;
-}
-.alumni3-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/0.png) center center no-repeat;
-    background-size: cover;
-}
-.alumni4-header {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/tsyp12.jpg) center center no-repeat;
-    background-size: cover;
-}
+
+
 .contact-header {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/tsyp12.jpg) center center no-repeat;
     background-size: cover;
@@ -363,37 +308,6 @@
 /*** About ***/
 .about {
     background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/6.jpg) left center no-repeat;
-    background-size: cover;
-}
-/*** About ***/
-.about-cs {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/261.jpg) left center no-repeat;
-    background-size: cover;
-}
-/*** About ***/
-.about-aess {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/5.jpg) left center no-repeat;
-    background-size: cover;
-}
-/*** About ***/
-.about-wie {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/aadad.jpg) left center no-repeat;
-    background-size: cover;
-}
-.about-ras {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/38.jpg) left center no-repeat;
-    background-size: cover;
-}
-.about-pes {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/45.jpg) left center no-repeat;
-    background-size: cover;
-}
-.about-ias {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/18.JPG) left center no-repeat;
-    background-size: cover;
-}
-.about-sight {
-    background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url(../img/aadad.jpg) left center no-repeat;
     background-size: cover;
 }
 .btn-play {
@@ -534,80 +448,6 @@
 }
 
 
-/*** Project ***/
-.project-item {
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
-}
-
-.project-item .project-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, .5);
-    opacity: 0;
-    padding-top: 60px;
-    transition: .5s;
-}
-
-.project-item:hover .project-overlay {
-    opacity: 1;
-    padding-top: 0;
-}
-
-.project-carousel .owl-nav {
-    position: absolute;
-    top: -100px;
-    right: 0;
-    display: flex;
-}
-
-.project-carousel .owl-nav .owl-prev,
-.project-carousel .owl-nav .owl-next {
-    margin-left: 15px;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--secondary);
-    border-radius: 55px;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .15);
-    font-size: 25px;
-    transition: .5s;
-}
-
-.project-carousel .owl-nav .owl-prev:hover,
-.project-carousel .owl-nav .owl-next:hover {
-    background: var(--primary);
-    color: #FFFFFF;
-}
-
-@media (max-width: 768px) {
-    .project-carousel .owl-nav {
-        top: -70px;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .project-carousel .owl-nav .owl-prev,
-    .project-carousel .owl-nav .owl-next {
-        margin: 0 7px;
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-}
-
-
 /*** Team ***/
 .team-item {
     position: relative;
@@ -730,118 +570,6 @@ h1.cs-underline::after {
     background-color: rgba(0, 123, 255, 0.5);
 }
 
-h1.sb-underline {
-    /* Set the color of the text to black or any color you prefer */
-    color: black;
-    /* Set the position to relative to allow positioning of the pseudo-element */
-    position: relative;
-}
-
-h1.sb-underline::after {
-    /* Position the pseudo-element below the text */
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Adjust this value to control the distance of the underline from the text */
-    left: 0;
-    /* Set the width and height of the underline */
-    width: 100%;
-    height: 5px; /* Adjust this value to control the thickness of the underline */
-    /* Set the color of the underline to orange or any color you prefer */
-    background-color: #0e3eba;
-}
-
-h1.sight-underline {
-    color: black; /* Set the text color */
-    position: relative; /* Required for the pseudo-element */
-}
-
-h1.sight-underline::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Adjust this value to control the distance of the underline from the text */
-    left: 0;
-    width: 100%; /* Full width of the text */
-    height: 5px; /* Thickness of the underline */
-    background-color: rgba(0, 123, 255, 0.5); /* Color of the underline (orange) */
-}
-
-
-h1.wie-underline {
-    /* Set the color of the text to black or any color you prefer */
-    color: black;
-    /* Set the position to relative to allow positioning of the pseudo-element */
-    position: relative;
-}
-
-h1.wie-underline::after {
-    /* Position the pseudo-element below the text */
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Adjust this value to control the distance of the underline from the text */
-    left: 0;
-    /* Set the width and height of the underline */
-    width: 100%;
-    height: 5px; /* Adjust this value to control the thickness of the underline */
-    /* Set the color of the underline to orange or any color you prefer */
-    background-color: #cf0ca8;
-}
-h1.ias-underline {
-    /* Set the color of the text to black or any color you prefer */
-    color: black;
-    /* Set the position to relative to allow positioning of the pseudo-element */
-    position: relative;
-}
-
-h1.ias-underline::after {
-    /* Position the pseudo-element below the text */
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Adjust this value to control the distance of the underline from the text */
-    left: 0;
-    /* Set the width and height of the underline */
-    width: 100%;
-    height: 5px; /* Adjust this value to control the thickness of the underline */
-    /* Set the color of the underline to orange or any color you prefer */
-    background-color: #0f853b;
-}
-h1.pes-underline {
-    /* Set the color of the text to black or any color you prefer */
-    color: black;
-    /* Set the position to relative to allow positioning of the pseudo-element */
-    position: relative;
-}
-
-h1.pes-underline::after {
-    /* Position the pseudo-element below the text */
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Adjust this value to control the distance of the underline from the text */
-    left: 0;
-    /* Set the width and height of the underline */
-    width: 100%;
-    height: 5px; /* Adjust this value to control the thickness of the underline */
-    /* Set the color of the underline to orange or any color you prefer */
-    background-color: #6dd633;
-}
-h1.ras-underline {
-    /* Set the color of the text to black or any color you prefer */
-    color: black;
-    /* Set the position to relative to allow positioning of the pseudo-element */
-    position: relative;
-}
-
-h1.ras-underline::after {
-    /* Position the pseudo-element below the text */
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Adjust this value to control the distance of the underline from the text */
-    left: 0;
-    /* Set the width and height of the underline */
-    width: 100%;
-    height: 5px; /* Adjust this value to control the thickness of the underline */
-    /* Set the color of the underline to orange or any color you prefer */
-    background-color: #6b1822;
-}
 /* CSS for the event thumbnails */
 .event-thumbnail {
     width: 200px;
@@ -1245,22 +973,6 @@ h1.ras-underline::after {
     margin: 0 30px !important;
 }
 
-.game-dev .card, .card-rtc {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.game-dev .card:hover , .card-rtc:hover{
-    transform: scale(1.05);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid #ffc107; /* Adds a retro yellow border on hover */
-}
-.game-dev .card-img-top, .card-rtc .card-img-to{
-    filter: sepia(20%) contrast(120%) brightness(90%);
-}
-.game-dev .card img , .card-rtc img{
-    height: 200px;
-    border: 2px dashed rgb(250, 180, 17);
-    border-radius: 10px;
-}
 .card-rtc {
     border-radius: 20px !important;
     padding: 15px;

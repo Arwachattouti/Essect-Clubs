@@ -10,10 +10,6 @@ class MemberController extends BaseController  {
     public function getAllMembers($id) {
         return $this->memberModel->getAllMembers($id);
     }
-
-    
-
-    // Ajouter un nouveau membre
     public function createMember($user_id, $club_id, $adhesion_id, $departement_id, $statut_membre = 'actif') {
         if ($this->memberModel->addMember($user_id, $club_id, $adhesion_id, $departement_id, $statut_membre)) {
             $_SESSION['success_message'] = "Membre ajouté avec succès.";
@@ -23,16 +19,14 @@ class MemberController extends BaseController  {
         header("Location: ../views/admin/manage_users.php");
         exit();
     }
-        // Afficher un membre spécifique
-        public function getMember($id) {
+
+    public function getMember($id) {
             return $this->memberModel->getMemberById($id);
         }
 
-        // Afficher un membre spécifique
-        public function getprofil($id) {
+    public function getprofil($id) {
             return $this->memberModel->afficherProfilMember($id);
         }
-    // Mettre à jour un membre
     public function updateMember($id, $username, $email, $departement, $statut) {
 
         if ($this->memberModel->updateMember($id, $username, $email, $departement, $statut)) {
@@ -43,7 +37,6 @@ class MemberController extends BaseController  {
     
     }
 
-    // Supprimer un membre
     public function deleteMember($id) {
         if ($this->memberModel->deleteMember($id)) {
             $_SESSION['success_message'] = "Membre supprimé avec succès.";

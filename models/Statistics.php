@@ -3,31 +3,18 @@ require_once __DIR__ . '/BaseModel.php';
 
 class Statistics extends BaseModel {
     public function fetchStatistics() {
-        // Nombre total de clubs
         $stmt = $this->db->query("SELECT COUNT(*) FROM clubs");
         $totalClubs = $stmt->fetchColumn();
-
-        // Nombre total d'étudiants
         $stmt = $this->db->query("SELECT COUNT(*) FROM users WHERE role = 'etudiant'");
         $totalStudents = $stmt->fetchColumn();
-
-        // Nombre de demandes d'adhésion en attente
         $stmt = $this->db->query("SELECT COUNT(*) FROM adhesions WHERE statut = 'en attente'");
         $pendingAdhesions = $stmt->fetchColumn();
-
-        // Nombre total de membres des clubs
         $stmt = $this->db->query("SELECT COUNT(*) FROM club_members");
         $totalMembers = $stmt->fetchColumn();
-
-        // Nombre total d'événements organisés par tous les clubs
         $stmt = $this->db->query("SELECT COUNT(*) FROM club_events");
         $totalEvents = $stmt->fetchColumn();
-
-        // Nombre total de membres du bureau des clubs
         $stmt = $this->db->query("SELECT COUNT(*) FROM club_bureau_members");
         $totalBureauMembers = $stmt->fetchColumn();
-
-        // Statistiques par club
         $stmt = $this->db->query("
             SELECT 
                 c.nom, 
@@ -52,8 +39,6 @@ class Statistics extends BaseModel {
         $stmt->execute([$club_id]);
         return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
     }
-
-    // Récupérer le nombre total de demandes d'adhésion avec état
     public function getAdhesionRequests($club_id) {
         $stmt = $this->db->prepare("
             SELECT 
@@ -65,15 +50,11 @@ class Statistics extends BaseModel {
         $stmt->execute([$club_id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
-    // Récupérer le nombre total d'événements organisés par le club
     public function getTotalEvents($club_id) {
         $stmt = $this->db->prepare("SELECT COUNT(*) AS total FROM club_events WHERE club_id = ?");
         $stmt->execute([$club_id]);
         return $stmt->fetch(PDO::FETCH_ASSOC)['total'];
     }
-
-    // Récupérer le taux moyen de participation aux événements
     public function getParticipationRate($club_id) {
         $stmt = $this->db->prepare("
             SELECT 
@@ -83,8 +64,6 @@ class Statistics extends BaseModel {
         $stmt->execute([$club_id]);
         return round($stmt->fetch(PDO::FETCH_ASSOC)['participation_rate'], 2);
     }
-
-    // Récupérer le nombre total de participations aux événements
     public function getTotalParticipations($club_id) {
         $stmt = $this->db->prepare("SELECT SUM(participants) AS total FROM club_events WHERE club_id = ?");
         $stmt->execute([$club_id]);

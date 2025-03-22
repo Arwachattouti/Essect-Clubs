@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../controllers/MemberController.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 $controller = new MemberController();
-$members = $controller->getAllMembers($id); // Récupération des membres
+$members = $controller->getAllMembers($id); 
 include '../includes/header1.php';  
 ?>
 
@@ -17,13 +17,10 @@ include '../includes/header1.php';
     <a href="manage_statistics.php?id=<?php echo $id; ?>" class="nav-link"> 📊 Consulter les statistiques du club </a>
     <a href="logout.php?id=<?php echo $id; ?>" class="nav-link"> 🚪 Déconnexion </a>
 </div>
-
-<!-- Contenu principal -->
 <div class="content">
     <div class="container mt-5">
         <h2 class="text-center">Gestion des Membres 
             <?php 
-            // Vérifier si $members contient des données avant d'accéder à 'club'
             if (!empty($members) && isset($members[0]['club'])) {
                 echo htmlspecialchars($members[0]['club']);
             } else {
@@ -33,8 +30,7 @@ include '../includes/header1.php';
         </h2>
 
         <?php  
-        // Affichage des messages de session avec une vérification stricte
-        if (!empty($_SESSION['success_message'])) {
+         if (!empty($_SESSION['success_message'])) {
             echo "<div class='alert alert-success'>" . htmlspecialchars($_SESSION['success_message']) . "</div>";
             unset($_SESSION['success_message']);
         }

@@ -65,7 +65,6 @@ public function request($id) {
         if (!$adhesion) {
             die("Adhésion introuvable.");
         }
-    
         $user_id = $adhesion['user_id']; 
         $departement = $this->adhesionModel->checkDepartementExists($departement_id);
         var_dump($departement);
@@ -76,7 +75,6 @@ public function request($id) {
         $this->adhesionModel->updateStatut($adhesion['id'], 'accepté');
         
         $this->clubMemberModel->addMembera($user_id, $club_id, $adhesion_id, $departement_id);
-        $this->adhesionModel->deleteAdhesion($user_id);
     
         header("Location: manage_adhesion.php?id={$club_id}");
         exit();
@@ -94,7 +92,6 @@ public function request($id) {
         }
         $user_id = $adhesion['user_id'];
         $this->adhesionModel->updateStatut($id, 'refusé');
-        //$this->adhesionModel->deleteAdhesion($user_id);
         header("Location: manage_adhesion.php?id={$club_id}");
         exit();
     }

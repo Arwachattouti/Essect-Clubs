@@ -4,8 +4,6 @@ require_once __DIR__ . '/../../controllers/ClubController.php';
 include '../includes/header1.php';
 
 $controller = new ClubController();
-
-// Vérifier si l'ID du club est fourni
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     $_SESSION['error_message'] = "Aucun club sélectionné pour modification.";
     header("Location: ../admin/manage_clubs.php");
@@ -18,7 +16,6 @@ if (!$club) {
     header("Location: ../admin/manage_clubs.php");
     exit();
 }
-// Traitement du formulaire de modification
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = trim($_POST['nom']);
     $description = trim($_POST['description']);
@@ -27,11 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $instagram_link = $_POST['instagram_link'];
     $nb_membre= $_POST['nb_membre'];
     $nb_partenaires = $_POST['nb_partenaires'];
-    $logo = $club['logo']; // Conserver l'ancien logo
-    $img_slide1 = $club['img_slide1']; // Conserver l'ancienne image slide1
-    $img_slide2 = $club['img_slide2']; // Conserver l'ancienne image slide2
-
-    // Mise à jour des données du club via le ClubController
+    $logo = $club['logo']; 
+    $img_slide1 = $club['img_slide1']; 
+    $img_slide2 = $club['img_slide2']; 
     if ($controller->updateClub($clubId, $nom, $description, $date_creation, $facebook_link, $instagram_link, $nb_membre, $nb_partenaires, $logo, $img_slide1, $img_slide2)) {
         $_SESSION['success_message'] = "Le club a été mis à jour avec succès.";
         header("Location: ../admin/manage_clubs.php");

@@ -1,11 +1,13 @@
 <?php 
 require_once __DIR__ . '/../../controllers/ClubController.php';
 require_once __DIR__ . '/../../controllers/AdhesionController.php';
-include '../includes/header2.php';//ki nfasa5ha ti5dem 
+include '../includes/header2.php'; // Si supprimé, le code fonctionne 
+
 $id = isset($_GET['id']) ? $_GET['id'] : null;
 $controller1 = new ClubController();
 $clubs = $controller1->afficherClubs(); 
 $controller2 = new AdhesionController();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $controller2->request($id); 
 }
@@ -13,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br><br>
 <center>
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="fr">
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,34 +28,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form action="" method="POST" enctype="multipart/form-data">
         <div class="form-section">
             <div class="input-group">
-                <label for="full_name">Full Name:</label><br>
+                <label for="full_name">Nom et Prénom :</label><br>
                 <input type="text" id="full_name" name="full_name" required>
             </div>
             <div class="input-group">
-                <label for="email">Email Address:</label><br>
+                <label for="email">Adresse Email :</label><br>
                 <input type="email" id="email" name="email" required>
             </div>
         </div>
         <div class="form-section">
             <div class="input-group">
-                <label for="birthdate">Date of Birth:</label><br>
+                <label for="birthdate">Date de Naissance :</label><br>
                 <input type="date" id="birthdate" name="birthdate" required>
             </div>
             <div class="input-group">
-                <label for="phone">Phone Number:</label><br>
+                <label for="phone">Numéro de Téléphone :</label><br>
                 <input type="tel" id="phone" name="phone" required>
             </div>
         </div>
         <div class="form-section">
             <div class="input-group">
-                <label for="gender">Gender:</label><br>
+                <label for="gender">Genre :</label><br>
                 <select id="gender" name="gender" required>
                     <option value="Homme">Homme</option>
                     <option value="Femme">Femme</option>
                 </select>
             </div>
             <div class="input-group">
-                <label for="club_id">Choose a Club:</label><br>
+                <label for="club_id">Choisissez un Club :</label><br>
                 <select id="club_id" name="club_id" required>
                     <?php
                     if (!empty($clubs)) {
@@ -61,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             echo '<option value="' . $club['id'] . '">' . $club['nom'] . '</option>';
                         }
                     } else {
-                        echo '<option value="">No clubs available</option>';
+                        echo '<option value="">Aucun club disponible</option>';
                     }
                     ?>
                 </select>
@@ -69,26 +71,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="form-section">
             <div class="input-group">
-                <label for="skills">Skills:</label><br>
+                <label for="skills">Compétences :</label><br>
                 <textarea id="skills" name="skills" required></textarea>
             </div>
             <div class="input-group">
-                <label for="hobbies">Hobbies:</label><br>
+                <label for="hobbies">Loisirs :</label><br>
                 <textarea id="hobbies" name="hobbies" required></textarea>
             </div>
         </div>
         <div class="form-section">
-        <div class="input-group">
-    <label for="cv">Upload CV (PDF, DOC, DOCX):</label><br>
-    <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-</div>
             <div class="input-group">
-                <label for="reason">Reason for Joining:</label><br>
+                <label for="cv">Télécharger le CV (PDF, DOC, DOCX) :</label><br>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+            </div>
+            <div class="input-group">
+                <label for="reason">Motivation pour rejoindre :</label><br>
                 <textarea id="reason" name="reason" required></textarea>
             </div>
         </div>
 
-        <button type="submit">Submit Application</button>
+        <button type="submit">Envoyer la Candidature</button>
     </form>
 </div>
 
